@@ -2158,27 +2158,84 @@
   color: transparent !important;
 }
 
-/*** Colors ***/
-/*** Badges ***/
-/*** Buttons ***/
-/*** Cards ***/
-/*** Collapsible ***/
-/*** Chips ***/
-/*** Date Picker ***/
-/*** Dropdown ***/
-/*** Fonts ***/
-/*** Forms ***/
-/*** Global ***/
-/*** Navbar ***/
-/*** SideNav ***/
-/*** Photo Slider ***/
-/*** Spinners | Loaders ***/
-/*** Tabs ***/
-/*** Tables ***/
-/*** Toasts ***/
-/*** Typography ***/
-/*** Collections ***/
-/* Progress Bar */
+/* ==========================================================================
+   Materialize variables
+   ========================================================================== */
+/**
+ * Table of Contents:
+ *
+ *  1. Colors
+ *  2. Badges
+ *  3. Buttons
+ *  4. Cards
+ *  5. Collapsible
+ *  6. Chips
+ *  7. Date Picker
+ *  8. Dropdown
+ *  10. Forms
+ *  11. Global
+ *  12. Grid
+ *  13. Navigation Bar
+ *  14. Side Navigation
+ *  15. Photo Slider
+ *  16. Spinners | Loaders
+ *  17. Tabs
+ *  18. Tables
+ *  19. Toasts
+ *  20. Typography
+ *  21. Footer
+ *  22. Flow Text
+ *  23. Collections
+ *  24. Progress Bar
+ */
+/* 1. Colors
+   ========================================================================== */
+/* 2. Badges
+   ========================================================================== */
+/* 3. Buttons
+   ========================================================================== */
+/* 4. Cards
+   ========================================================================== */
+/* 5. Collapsible
+   ========================================================================== */
+/* 6. Chips
+   ========================================================================== */
+/* 7. Date Picker
+   ========================================================================== */
+/* 8. Dropdown
+   ========================================================================== */
+/* 9. Fonts
+   ========================================================================== */
+/* 10. Forms
+   ========================================================================== */
+/* 11. Global
+   ========================================================================== */
+/* 12. Grid
+   ========================================================================== */
+/* 13. Navigation Bar
+   ========================================================================== */
+/* 14. Side Navigation
+   ========================================================================== */
+/* 15. Photo Slider
+   ========================================================================== */
+/* 16. Spinners | Loaders
+   ========================================================================== */
+/* 17. Tabs
+   ========================================================================== */
+/* 18. Tables
+   ========================================================================== */
+/* 19. Toasts
+   ========================================================================== */
+/* 20. Typography
+   ========================================================================== */
+/* 21. Footer
+   ========================================================================== */
+/* 22. Flow Text
+   ========================================================================== */
+/* 23. Collections
+   ========================================================================== */
+/* 24. Progress Bar
+   ========================================================================== */
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
@@ -3323,7 +3380,8 @@ nav ul a span.badge {
   float: right !important;
 }
 
-.no-select, input[type=range], input[type=range] + .thumb {
+.no-select, input[type=range],
+input[type=range] + .thumb {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -7783,8 +7841,6 @@ small {
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 1;
-  background-color: inherit;
 }
 
 .card.small {
@@ -7837,8 +7893,11 @@ small {
 }
 
 .card .card-action {
+  position: relative;
+  background-color: inherit;
   border-top: 1px solid rgba(160, 160, 160, 0.2);
   padding: 20px;
+  z-index: 2;
 }
 
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-floating) {
@@ -7852,6 +7911,11 @@ small {
   color: #ffd8a6;
 }
 
+.card .card-action + .card-reveal {
+  z-index: 1;
+  padding-bottom: 64px;
+}
+
 .card .card-reveal {
   padding: 20px;
   position: absolute;
@@ -7860,7 +7924,7 @@ small {
   overflow-y: auto;
   top: 100%;
   height: 100%;
-  z-index: 1;
+  z-index: 3;
   display: none;
 }
 
@@ -8673,7 +8737,6 @@ a.waves-effect .waves-ripple {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Remove Focus Boxes */
 select:focus {
   outline: 1px solid #c9f3ef;
 }
@@ -8688,9 +8751,9 @@ label {
   color: #9e9e9e;
 }
 
-/***************************
-   Text Inputs + Textarea
-****************************/
+/* Text Inputs + Textarea
+   ========================================================================== */
+/* Style Placeholders */
 ::-webkit-input-placeholder {
   color: #d1d1d1;
 }
@@ -8709,6 +8772,7 @@ label {
   color: #d1d1d1;
 }
 
+/* Text inputs */
 input:not([type]),
 input[type=text],
 input[type=password],
@@ -8734,7 +8798,7 @@ textarea.materialize-textarea {
   padding: 0;
   box-shadow: none;
   box-sizing: content-box;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 input:not([type]):disabled, input:not([type])[readonly="readonly"],
@@ -8766,7 +8830,8 @@ textarea.materialize-textarea[readonly="readonly"] {
   border-bottom: 1px dotted rgba(0, 0, 0, 0.26);
 }
 
-input:not([type]):disabled + label, input:not([type])[readonly="readonly"] + label,
+input:not([type]):disabled + label,
+input:not([type])[readonly="readonly"] + label,
 input[type=text]:disabled + label,
 input[type=text][readonly="readonly"] + label,
 input[type=password]:disabled + label,
@@ -9046,6 +9111,7 @@ textarea.materialize-textarea + label:after {
   }
 }
 
+/* Search Field */
 .input-field input[type=search] {
   display: block;
   line-height: inherit;
@@ -9081,6 +9147,7 @@ textarea.materialize-textarea + label:after {
   transition: .3s color;
 }
 
+/* Textarea */
 textarea {
   width: 100%;
   height: 3rem;
@@ -9106,10 +9173,8 @@ textarea.materialize-textarea {
   /* prevents text jump on Enter keypress */
 }
 
-/***************
-  Radio Buttons
-***************/
-/* Remove default Radio Buttons */
+/* Radio Buttons
+   ========================================================================== */
 [type="radio"]:not(:checked),
 [type="radio"]:checked {
   position: absolute;
@@ -9148,14 +9213,21 @@ textarea.materialize-textarea {
 }
 
 /* Unchecked styles */
-[type="radio"]:not(:checked) + label:before {
+[type="radio"]:not(:checked) + label:before,
+[type="radio"]:not(:checked) + label:after,
+[type="radio"]:checked + label:before,
+[type="radio"]:checked + label:after,
+[type="radio"].with-gap:checked + label:before,
+[type="radio"].with-gap:checked + label:after {
   border-radius: 50%;
+}
+
+[type="radio"]:not(:checked) + label:before,
+[type="radio"]:not(:checked) + label:after {
   border: 2px solid #5a5a5a;
 }
 
 [type="radio"]:not(:checked) + label:after {
-  border-radius: 50%;
-  border: 2px solid #5a5a5a;
   z-index: -1;
   -webkit-transform: scale(0);
           transform: scale(0);
@@ -9163,37 +9235,35 @@ textarea.materialize-textarea {
 
 /* Checked styles */
 [type="radio"]:checked + label:before {
-  border-radius: 50%;
   border: 2px solid transparent;
 }
 
-[type="radio"]:checked + label:after {
-  border-radius: 50%;
+[type="radio"]:checked + label:after,
+[type="radio"].with-gap:checked + label:before,
+[type="radio"].with-gap:checked + label:after {
   border: 2px solid #26a69a;
+}
+
+[type="radio"]:checked + label:after,
+[type="radio"].with-gap:checked + label:after {
   background-color: #26a69a;
   z-index: 0;
+}
+
+[type="radio"]:checked + label:after {
   -webkit-transform: scale(1.02);
           transform: scale(1.02);
 }
 
 /* Radio With gap */
-[type="radio"].with-gap:checked + label:before {
-  border-radius: 50%;
-  border: 2px solid #26a69a;
-}
-
 [type="radio"].with-gap:checked + label:after {
-  border-radius: 50%;
-  border: 2px solid #26a69a;
-  background-color: #26a69a;
-  z-index: 0;
   -webkit-transform: scale(0.5);
           transform: scale(0.5);
 }
 
 /* Focused styles */
 [type="radio"].tabbed:focus + label:before {
-  box-shadow: 0px 0px 0px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Disabled Radio With gap */
@@ -9226,9 +9296,8 @@ textarea.materialize-textarea {
   border-color: #BDBDBD;
 }
 
-/***************
-   Checkboxes
-***************/
+/* Checkboxes
+   ========================================================================== */
 /* CUSTOM CSS CHECKBOXES */
 form p {
   margin-bottom: 10px;
@@ -9300,7 +9369,7 @@ form p:last-child {
           transform: scale(1);
   border: 0;
   border-radius: 50%;
-  box-shadow: 0px 0px 0px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.1);
   background-color: rgba(0, 0, 0, 0.1);
 }
 
@@ -9439,9 +9508,8 @@ form p:last-child {
   border-color: #BDBDBD;
 }
 
-/***************
-     Switch
-***************/
+/* Switch
+   ========================================================================== */
 .switch,
 .switch * {
   -webkit-user-select: none;
@@ -9466,6 +9534,7 @@ form p:last-child {
 
 .switch label input[type=checkbox]:checked + .lever:after {
   background-color: #26a69a;
+  left: 24px;
 }
 
 .switch label .lever {
@@ -9504,10 +9573,6 @@ input[type=checkbox]:not(:disabled) ~ .lever:active:after {
   box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 0 0 15px rgba(0, 0, 0, 0.08);
 }
 
-.switch label input[type=checkbox]:checked + .lever:after {
-  left: 24px;
-}
-
 .switch input[type=checkbox][disabled] + .lever {
   cursor: default;
 }
@@ -9517,9 +9582,25 @@ input[type=checkbox]:not(:disabled) ~ .lever:active:after {
   background-color: #BDBDBD;
 }
 
-/***************
-  Select Field
-***************/
+/* Select Field
+   ========================================================================== */
+select {
+  display: none;
+}
+
+select.browser-default {
+  display: block;
+}
+
+select {
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #f2f2f2;
+  border-radius: 2px;
+  height: 3rem;
+}
+
 .select-label {
   position: absolute;
 }
@@ -9560,14 +9641,6 @@ input[type=checkbox]:not(:disabled) ~ .lever:active:after {
   position: absolute;
   top: -14px;
   font-size: 0.8rem;
-}
-
-select {
-  display: none;
-}
-
-select.browser-default {
-  display: block;
 }
 
 select:disabled {
@@ -9620,9 +9693,8 @@ select:disabled {
   padding-left: 1rem;
 }
 
-/*********************
-      File Input
-**********************/
+/* File Input
+   ========================================================================== */
 .file-field {
   position: relative;
 }
@@ -9661,14 +9733,14 @@ select:disabled {
   filter: alpha(opacity=0);
 }
 
-/***************
-      Range
-***************/
+/* Range
+   ========================================================================== */
 .range-field {
   position: relative;
 }
 
-input[type=range], input[type=range] + .thumb {
+input[type=range],
+input[type=range] + .thumb {
   cursor: pointer;
 }
 
@@ -9678,8 +9750,12 @@ input[type=range] {
   border: none;
   outline: none;
   width: 100%;
-  margin: 15px 0px;
+  margin: 15px 0;
   padding: 0;
+}
+
+input[type=range]:focus {
+  outline: none;
 }
 
 input[type=range] + .thumb {
@@ -9716,10 +9792,6 @@ input[type=range] + .thumb.active .value {
   margin-left: -1px;
   margin-top: 8px;
   font-size: 10px;
-}
-
-input[type=range]:focus {
-  outline: none;
 }
 
 input[type=range] {
@@ -9770,9 +9842,8 @@ input[type=range]::-moz-range-thumb {
   margin-top: -5px;
 }
 
-/*hide the outline behind the border*/
 input[type=range]:-moz-focusring {
-  outline: 1px solid white;
+  outline: 1px solid #fff;
   outline-offset: -1px;
 }
 
@@ -9782,9 +9853,7 @@ input[type=range]:focus::-moz-range-track {
 
 input[type=range]::-ms-track {
   height: 3px;
-  /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
   background: transparent;
-  /*leave room for the larger thumb to overflow with a transparent border */
   border-color: transparent;
   border-width: 6px 0;
   /*remove default tick marks*/
@@ -9813,18 +9882,6 @@ input[type=range]:focus::-ms-fill-lower {
 
 input[type=range]:focus::-ms-fill-upper {
   background: #ccc;
-}
-
-/***************************
-   Text Inputs + Textarea
-****************************/
-select {
-  background-color: rgba(255, 255, 255, 0.9);
-  width: 100%;
-  padding: 5px;
-  border: 1px solid #f2f2f2;
-  border-radius: 2px;
-  height: 3rem;
 }
 
 /***************
